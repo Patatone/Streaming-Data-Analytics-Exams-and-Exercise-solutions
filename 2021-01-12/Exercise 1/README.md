@@ -20,7 +20,7 @@ from pattern[
 ];
 ```
 
-#Time And Event Sequence
+# Time And Event Sequence
 
 ```
 A={n=1}
@@ -63,6 +63,8 @@ In this case, to have a match we have to have an "A" event followed by a "B" eve
 They are only A3@6 and B3@7.
 
 - Why?
+Because we have to pay attention to the pattern operator precedence. 
+We have to give more priority to what happens in the brackets and after to the guard postfix operator (where timer:within()).
 
 [Operator Precedence](http://esper.espertech.com/release-5.4.0/esper-reference/html/event_patterns.html#pattern-op-precedence)
 
