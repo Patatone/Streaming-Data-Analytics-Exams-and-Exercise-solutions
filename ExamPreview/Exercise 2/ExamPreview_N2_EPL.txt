@@ -1,0 +1,10 @@
+create schema DoorOpening(doorId int);
+create schema DoorClosing(doorId int);
+
+@Name("Out")
+select doorId, count(t_open)
+from DoorOpening.win:time(2 minutes)
+group by doorId
+output last every 60 seconds;
+
+// NOT SURE
