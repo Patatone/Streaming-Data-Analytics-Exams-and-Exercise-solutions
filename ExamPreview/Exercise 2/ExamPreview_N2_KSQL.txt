@@ -1,8 +1,0 @@
-SELECT Open.id, count(Open)
-FROM DoorOpening Open WITHIN 2 MINUTES
-	JOIN DoorClosing Close
-	ON Open.id = Close.id
-	WINDOW TUMBLING (SIZE 1 MINUTES)
-EMIT CHANGES;
-
-// NOT SURE
