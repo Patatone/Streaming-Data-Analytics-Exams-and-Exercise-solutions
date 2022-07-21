@@ -15,7 +15,8 @@ create schema C (
 @Name("Out")
 select a.n, b.n
 from pattern[
-every a=A -> (b=B and not c=C where timer:within(3 sec))
+	every a=A -> 
+	(b=B and not c=C where timer:within(3 sec))
 ];
 ```
 
