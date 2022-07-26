@@ -12,7 +12,7 @@ create schema VehicleTracking(
 );
 
 @Name('Out')
-select id, count(*) as Count
+select status, count(*) as Count
 	from VehicleTracking.win:time(90 seconds)
 	where weight>maxWeight
 group by status
