@@ -62,6 +62,7 @@ Because we have to pay attention to the pattern operator precedence.
 We have to give more priority to what happens in the brackets and after to the guard postfix operator `where timer:within()`.
 
 [Operator Precedence](http://esper.espertech.com/release-5.4.0/esper-reference/html/event_patterns.html#pattern-op-precedence)
+[Pattern Guards](http://esper.espertech.com/release-5.4.0/esper-reference/html/event_patterns.html#pattern-guards)
 
 - **Operator Precedence**
  - brackets

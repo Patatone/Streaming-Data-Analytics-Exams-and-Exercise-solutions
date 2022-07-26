@@ -3,10 +3,10 @@
 ## Window operations
 
 ### Logical Sliding Window Example
-** Can be implemented with a Hopping Window with ADVANCE BY 1 SECONDS**
+Can be implemented with a Hopping Window with ADVANCE BY 1 SECONDS
 
 ### Physical Sliding Window Example
-**Not supported**
+Not supported
 
 ### Logical Tumbling Window Example
 
@@ -18,7 +18,7 @@ GROUP BY SENSOR
 EMIT CHANGES;
 ```
 ### Physical Tumbling Window Example
-**Not supported**
+Not supported
 
 ### Logical Hopping Window Example
 ```
