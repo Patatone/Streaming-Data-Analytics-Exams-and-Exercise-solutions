@@ -6,23 +6,18 @@ create schema DoorOpening(doorId int);
 create schema DoorClosing(doorId int);
 
 @Name("Out")
-select doorId, count(t_open)
+select doorId, count(*)
 from DoorOpening.win:time(2 minutes)
 group by doorId
-output last every 60 seconds;
-
-// NOT SURE
+output last every 1 minute;
 ```
 
 # kSQL
 
 ```
-SELECT Open.id, count(Open)
-FROM DoorOpening Open WITHIN 2 MINUTES
-	JOIN DoorClosing Close
-	ON Open.id = Close.id
-	WINDOW TUMBLING (SIZE 1 MINUTES)
+SELECT doorId, count(*)
+FROM DoorOpening
+WINDOW HOPPING (SIZE 2 MINUTES, ADVANCE BY 1 MINUTE)
+GROUP BY doorId
 EMIT CHANGES;
-
-// NOT SURE
 ```

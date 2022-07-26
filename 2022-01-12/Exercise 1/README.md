@@ -56,8 +56,8 @@ Out-output={a.n=3, b.n=3}
 # Questions
 
 - **When does such a pattern match?**
-It can match only after the last "C" event.
-In this case, to have a match we have to have an "A" event followed by a "B" event in a time window of 3 seconds.
+To have a match we have to have an "A" event followed by a "B" event in a time window of 3 seconds.
+In this time window, between these two events, we can't have a "C" event.
 
 - **Which are the events that trigger the matching?**
 They are only A3@6 and B3@7.
@@ -68,3 +68,11 @@ We have to give more priority to what happens in the brackets and after to the g
 
 [Operator Precedence](http://esper.espertech.com/release-5.4.0/esper-reference/html/event_patterns.html#pattern-op-precedence)
 
+- **Operator Precedence**
+ - brackets
+ - where, timer:within and while 
+ - every, not, every-distinct
+ - until
+ - and
+ - or
+ - ->
